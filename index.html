@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Directory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button id="home-btn" class="home-icon"><img src="./images/home.svg" alt="Home"></button>
+            <div class="search-container">
+                <input type="text" id="searchBar" placeholder="Search Websites...">
+                <button id="searchButton" class="search-icon"><img src="./images/search.svg" alt="Search"></button>
+            </div>
+            <button id="add-btn">Add</button>
+            <button id="delete-btn">Delete</button>
+        </header>
+    </div>
+
+    <div class="main-container">
+        <div class="category-container">
+            <ul class="category-list">
+                <li class="category-title">
+                    <h2><u>Categories</u></h2>
+                </li>
+                <li class="category-name" data-category="Jobs">
+                    <img src="./images/jobs.svg" alt="Jobs" class="category-title-img" width="20" height="20">
+                    <p class="category-title">Jobs</p>
+                </li>
+                <li class="category-name" data-category="Freelancing">
+                    <img src="./images/freelancing.svg" alt="Freelancing" class="category-title-img" width="20" height="20">
+                    <p class="category-title">Freelancing</p>
+                </li>
+                <li class="category-name" data-category="Code AI">
+                    <img src="./images/codeAI.svg" alt="Code AI" class="category-title-img" width="20" height="20">
+                    <p class="category-title">Code AI</p>
+                </li>
+                <li class="category-name" data-category="Bootstrap">
+                    <img src="./images/bootstrap.svg" alt="Bootstrap" class="category-title-img" width="20" height="20">
+                    <p class="category-title">Bootstrap</p>
+                </li>
+                <li class="category-name" data-category="Images & Icons">
+                    <img src="./images/images&icons.svg" alt="Images & Icons" class="category-title-img" width="20" height="20">
+                    <p class="category-title">Images & Icons</p>
+                </li>
+                <li class="category-name" data-category="Information">
+                    <img src="./images/information.svg" alt="Information" class="category-title-img" width="20" height="20">
+                    <p class="category-title">Information</p>
+                </li>
+                <li class="category-name" data-category="Games">
+                    <img src="./images/game.svg" alt="Games" class="category-title-img" width="20" height="20">
+                    <p class="category-title">Games</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="website-container-outer">
+            <div class="website-container">
+                <div id="websiteList"></div>
+                <button id="removeButton" style="display: none;">Remove</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for adding a new website -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button"><img src="./images/cross.svg" alt="cross"></span>
+            <h2 class="modal-title">Add New Website</h2>
+            <form id="websiteForm" class="website-form">
+                <div class="form-content">
+                    <label for="websiteName">Name:</label>
+                    <input type="text" id="websiteName" required>
+                </div>
+                <div class="form-content">
+                    <label for="websiteLink">Link:</label>
+                    <input type="url" id="websiteLink" required>
+                </div>
+                <div class="form-content">
+                    <label for="websiteCategory">Category:</label>
+                    <select id="websiteCategory" required>
+                        <option value="Jobs">Jobs</option>
+                        <option value="Freelancing">Freelancing</option>
+                        <option value="Code AI">Code AI</option>
+                        <option value="Bootstrap">Bootstrap</option>
+                        <option value="Images & Icons">Images & Icons</option>
+                        <option value="Information">Information</option>
+                        <option value="Games">Games</option>
+                    </select>
+                </div>
+                <div class="form-content">
+                    <label for="websiteDescription">Description:</label>
+                    <textarea id="websiteDescription" required></textarea>    
+                </div>
+                <div class="submit-btn">
+                    <button type="submit" class="submit-txt">Add Website</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

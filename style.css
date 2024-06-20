@@ -1,0 +1,728 @@
+/* Base CSS Code */
+:root {
+    --black: #000000;
+    --gray: #333333;
+    --gray-light: #6f6f6f;
+    --white: #ffffff;
+    --modal: #606060;
+    --modal-bg: #00000066;
+    --border-color: #888;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding-top: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+#searchBar {
+    flex-grow: 1;
+    padding: 8px 30px 8px 8px;
+    background-color: var(--gray);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    position: relative;
+    justify-content: center;
+    left: 20px;
+}
+
+.home-icon {
+    padding: 10px;
+    margin: 10px;
+    background-color: var(--gray);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-icon {
+    padding: 5px;
+    margin: 10px;
+    background-color: var(--gray);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    right: 23px;
+}
+
+#add-btn, #delete-btn{
+    padding: 10px;
+    margin: 10px;
+    background-color: var(--gray);
+    color: var (--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.home-icon:hover, .search-icon:hover, #add-btn:hover, #delete-btn:hover {
+    background-color: var(--gray-light);
+}
+
+.main-container {
+    width: 95%;
+    margin: auto;
+    padding-top: 20px;
+    display: flex;
+}
+
+.category-container {
+    border: 2px solid;
+    width: 20%;
+}
+
+.category-list {
+    list-style: none;
+    margin-top: 40px;
+    padding-left: 12px;
+}
+
+.category-name {
+    display: flex;
+}
+
+.category-title {
+    margin: 15px;
+    font-size: 20px;
+}
+
+.category-title-img {
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.website-container-outer {
+    border: 2px solid;
+    width: 80%;
+    position: relative;
+    margin-left: 20px;
+}
+
+.website-container {
+    margin: 15px;
+}
+
+#websiteList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.website-item {
+    border: 1px solid var(--gray);
+    padding: 10px;
+    width: calc(33% - 20px);
+    box-sizing: border-box;
+    background-color: var(--gray);
+    border-radius: 4px;
+    position: relative;
+}
+
+.website-item img {
+    max-width: 100%;
+}
+
+.website-item h3, .website-item p, .website-item a {
+    color: var(--white);
+}
+
+.website-item.selected {
+    border: 1px solid var(--gray);
+}
+
+.delete-checkbox {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: none;
+}
+
+#removeButton {
+    margin-top: 20px;
+    display: none;
+    background-color: var(--gray);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#removeButton:hover {
+    background-color: var(--gray-light);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--modal-bg);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: var(--modal);
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    width: 80%;
+    color: var(--black);
+}
+
+.close-button {
+    position: relative;
+        left: 90%;
+        margin-top: 10px;
+        cursor: pointer;
+        color: var(--black);
+}
+
+.close-button:hover {
+    color: var(--gray);
+}
+
+.modal-title {
+    margin: 5px;
+    left: 20px;
+    position: relative;
+}
+
+.website-form {
+    width: 60%;
+    position: relative;
+    left: 20%;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: start;
+}
+
+.form-content {
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#websiteDescription {
+    width: 60%;
+    height: 15px;
+}
+
+label {
+    position: sticky;
+}
+
+.submit-btn {
+    margin-top: 30px;
+    position: relative;
+    left: 40%;
+    padding: 10px;
+}
+
+.submit-txt {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--gray);
+    color: var(--white);
+}
+
+.submit-txt:hover {
+    background-color: var(--black);
+}
+
+
+
+/* Media Queries */
+
+/* @media (min-width: 480px) */
+@media (min-width: 480px) {
+    .container {
+        width: 90%;
+    }
+
+    .website-item {
+        width: calc(50% - 20px);
+    }
+
+    .website-form {
+        width: 80%;
+        left: 10%;
+    }
+
+    #websiteDescription {
+        width: 80%;
+    }
+
+    .modal-title {
+        margin: 5px;
+        left: 20px;
+        position: relative;
+    }
+
+    .category-title {
+        margin: 8px;
+        font-size: 8px;
+    }
+    
+    .category-title-img {
+        margin-top: 10px;
+        width: 10px;
+        height: 10px;
+    }
+    
+    .website-form {
+        width: 60%;
+        position: relative;
+        left: 20%;
+        margin-top: 10px;
+        display: grid;
+        align-items: center;
+        justify-content: start;
+    }
+    
+    .form-content {
+        margin: 10px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+}
+
+/* @media (min-width: 570px) */
+@media (min-width: 570px) {
+    .website-item {
+        width: calc(50% - 20px);
+    }
+
+    .website-form {
+        width: 70%;
+        left: 15%;
+    }
+
+    #websiteDescription {
+        width: 70%;
+    }
+    
+    .category-title {
+        margin: 8px;
+        font-size: 12px;
+    }
+    
+    .category-title-img {
+        margin-top: 10px;
+        width: 15px;
+        height: 15px;
+    }
+
+    .modal-title {
+        margin: 5px;
+        left: 20px;
+        position: relative;
+    }
+    
+    .website-form {
+        width: 60%;
+        position: relative;
+        left: 20%;
+        margin-top: 10px;
+        display: grid;
+        align-items: center;
+        justify-content: start;
+    }
+    
+    .form-content {
+        margin: 10px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+}
+
+
+
+/* @media (min-width: 768px) */
+@media (min-width: 768px) {
+    .website-item {
+        width: calc(33% - 20px);
+    }
+
+    .website-form {
+        width: 60%;
+        left: 20%;
+    }
+
+    #websiteDescription {
+        width: 60%;
+    }
+
+    .category-name {
+        display: flex;
+        font-size: 12px;
+        margin-right: 10px;
+    }
+    
+    .category-title {
+        margin: 15px;
+        font-size: 15px;
+    }
+    
+    .category-title-img {
+        margin-top: 10px;
+        width: 20px;
+        height: 20px;
+    }
+    
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: var(--modal-bg);
+        padding-top: 60px;
+    }
+    
+    .modal-content {
+        background-color: var(--modal);
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid var(--border-color);
+        width: 90%;
+        color: var(--black);
+    }
+    
+    .close-button {
+        position: relative;
+        left: 90%;
+        margin-top: 10px;
+        cursor: pointer;
+        color: var(--black);
+    }
+    
+    .close-button:hover {
+        color: var(--gray);
+    }
+    
+    .modal-title {
+        margin: 5px;
+        left: 20px;
+        position: relative;
+    }
+    
+    .website-form {
+        width: 60%;
+        position: relative;
+        left: 20%;
+        margin-top: 10px;
+        display: grid;
+        align-items: center;
+        justify-content: start;
+    }
+    
+    .form-content {
+        margin: 10px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    
+    #websiteDescription {
+        width: 60%;
+        height: 15px;
+    }
+    
+    label {
+        position: sticky;
+    }
+    
+    .submit-btn {
+        margin-top: 30px;
+        position: relative;
+        left: 40%;
+        padding: 8px;
+    }
+    
+    .submit-txt {
+        padding: 8px;
+        border-radius: 5px;
+        border: none;
+        background-color: var(--gray);
+        color: var(--white);
+    }
+    
+    .submit-txt:hover {
+        background-color: var(--black);
+    }
+    
+    
+}
+
+/* @media (min-width: 1024px) */
+@media (min-width: 1024px) {
+    .website-form {
+        width: 50%;
+        left: 25%;
+    }
+
+    #websiteDescription {
+        width: 50%;
+    }
+
+    .category-name {
+        display: flex;
+    }
+    
+    .category-title {
+        margin: 15px;
+        font-size: 20px;
+    }
+    
+    .category-title-img {
+        margin: 10px;
+        width: 5px;
+        height: 5px;
+    }
+    
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: var(--modal-bg);
+        padding-top: 60px;
+    }
+    
+    .modal-content {
+        background-color: var(--modal);
+        margin: 5% auto;
+        padding: 15px;
+        border: 1px solid var(--border-color);
+        width: 80%;
+        color: var(--black);
+    }
+    
+    .close-button {
+        position: relative;
+        left: 90%;
+        margin-top: 10px;
+        cursor: pointer;
+        color: var(--black);
+    }
+    
+    .close-button:hover {
+        color: var(--gray);
+    }
+    
+    .modal-title {
+        margin: 5px;
+        left: 20px;
+        position: relative;
+    }
+    
+    .website-form {
+        width: 60%;
+        position: relative;
+        left: 20%;
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: start;
+    }
+    
+    .form-content {
+        margin: 10px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    
+    #websiteDescription {
+        width: 60%;
+        height: 15px;
+    }
+    
+    label {
+        position: sticky;
+    }
+    
+    .submit-btn {
+        margin-top: 30px;
+        position: relative;
+        left: 40%;
+        padding: 10px;
+    }
+    
+    .submit-txt {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: var(--gray);
+        color: var(--white);
+    }
+    
+    .submit-txt:hover {
+        background-color: var(--black);
+    }
+    
+    
+}
+
+
+
+
+
+/* @media (min-width: 1200px) */
+@media (min-width: 1200px) {
+    .container {
+        width: 70%;
+    }
+
+    .website-form {
+        width: 40%;
+        left: 30%;
+    }
+
+    #websiteDescription {
+        width: 40%;
+    }
+
+    .category-name {
+        display: flex;
+    }
+    
+    .category-title {
+        margin: 15px;
+        font-size: 20px;
+    }
+    
+    .category-title-img {
+        margin: 10px;
+        width: 5px;
+        height: 5px;
+    }    
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: var(--modal-bg);
+        padding-top: 60px;
+    }
+    
+    .modal-content {
+        background-color: var(--modal);
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid var(--border-color);
+        width: 80%;
+        color: var(--black);
+    }
+    
+    .close-button {
+        position: relative;
+        left: 90%;
+        margin-top: 10px;
+        cursor: pointer;
+        color: var(--black);
+    }
+    
+    .close-button:hover {
+        color: var(--gray);
+    }
+    
+    .modal-title {
+        margin: 5px;
+        left: 20px;
+        position: relative;
+    }
+    
+    .website-form {
+        width: 60%;
+        position: relative;
+        left: 20%;
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: start;
+    }
+    
+    .form-content {
+        margin: 10px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    
+    #websiteDescription {
+        width: 60%;
+        height: 15px;
+    }
+    
+    label {
+        position: sticky;
+    }
+    
+    .submit-btn {
+        margin-top: 30px;
+        position: relative;
+        left: 40%;
+        padding: 10px;
+    }
+    
+    .submit-txt {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: var(--gray);
+        color: var(--white);
+    }
+    
+    .submit-txt:hover {
+        background-color: var(--black);
+    }
+    
+    
+}
