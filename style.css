@@ -9,6 +9,30 @@
     --border-color: #888;
 }
 
+/* Custom scrollbar styles for WebKit browsers */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: var(--black); /* Color of the scrollbar track */
+    border-radius: 10px; /* Optional: Rounded corners for the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--black); /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Optional: Rounded corners for the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:var(--black); /* Color of the scrollbar thumb when hovered */
+}
+
+* {
+    scrollbar-width: thin; /* Width of the scrollbar */
+    scrollbar-color: var(--gray) var(--black) ; /* Color of the scrollbar thumb and track */
+}
+
 body {
     background-color: var(--black);
     color: var(--white);
